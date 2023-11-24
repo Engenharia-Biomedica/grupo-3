@@ -9,7 +9,7 @@ import requests
 st.header("Painel de Monitoramento de Antibióticos")
 st.subheader('Dados Interativos de antibióticos no período de 2017-2023', divider='rainbow')
 st.markdown("Projeto engenharia biomédica - Grupo 3")
-#
+
 # carregando imagem para o logo
 img = Image.open("imagem-logo.png")
 
