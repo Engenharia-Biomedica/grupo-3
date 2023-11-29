@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st
 
 # Carregamento de dados - carrega os dados do arquivo excel
-db = pd.read_csv('pbl.csv', sep=',')
+db = pd.read_csv('pbl-tratado.csv', sep=',')
 
 # Header
 st.header("Painel de Monitoramento de Pacientes")
