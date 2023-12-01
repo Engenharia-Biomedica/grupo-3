@@ -10,8 +10,10 @@ st.header("Painel de Monitoramento de Antibióticos")
 # Subheader
 st.subheader("Dados de uso de antibiótico no período de 2017-2023", divider='rainbow')
 
+a = st.selectbox
+
 # Criando um filtro de dados
-microorganismo = st.selectbox(
+microorganismo = a(
     "Microorganismos: ",
     ['Todos'] + list(db["ds_micro_organismo"].unique())
 )
@@ -35,7 +37,7 @@ def determinar_interpretacao(microorganismo, antibiotico):
 # Mostrando o gráfico para o usuário
 if microorganismo != 'Todos':
     antibioticos_disponiveis = db_filt[db_filt['ds_micro_organismo'] == microorganismo]['ds_antibiotico_microorganismo'].unique()
-    antibiotico = st.selectbox(
+    antibiotico = a(
         f"Antibióticos para {microorganismo}: ",
         ['Selecione'] + list(antibioticos_disponiveis)
     )
