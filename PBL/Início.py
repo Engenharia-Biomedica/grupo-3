@@ -29,9 +29,11 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
+#carregando arquivos 
 lottie_coding = load_lottiefile("coding.json")
 lottie_hello = load_lottieurl("https://lottie.host/3cf2308c-97bc-46e3-90a8-96bef39a4e2b/lq9hcfdTbw.json")
 
+#controle da velocidade 
 st_lottie(
     lottie_coding,
     speed=1,
