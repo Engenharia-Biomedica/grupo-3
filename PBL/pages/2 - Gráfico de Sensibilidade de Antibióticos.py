@@ -13,6 +13,7 @@ st.subheader("Dados de uso de antibiótico no período de 2017-2023", divider='r
 a = st.selectbox
 
 # Criando um filtro de dados
+# Seleção das variáveis únicas dentro da coluna de microorganismos
 microorganismo = a(
     "Microorganismos: ",
     ['Todos'] + list(db["ds_micro_organismo"].unique())
@@ -34,11 +35,11 @@ def determinar_interpretacao(microorganismo, antibiotico):
     else:
         return "Informação não encontrada"
 
-# Mostrando o gráfico para o usuário
+# Mostrando o gráfico com o resultado para o usuário
 if microorganismo != 'Todos':
     antibioticos_disponiveis = db_filt[db_filt['ds_micro_organismo'] == microorganismo]['ds_antibiotico_microorganismo'].unique()
     antibiotico = a(
-        f"Antibióticos para {microorganismo}: ",
+        f"Antibióticos para {microorganismo}: ", # abertura de uma função para chamar as variáveis para o resultado final
         ['Selecione'] + list(antibioticos_disponiveis)
     )
     if antibiotico != 'Selecione':
@@ -51,5 +52,5 @@ st.bar_chart(
     data = db,
     x = "cd_sigla_microorganismo", 
     y = "ds_antibiotico_microorganismo", 
-    color = "cd_interpretacao_antibiograma"
+    color = "cd_interpretacao_antibiograma" 
     , width=0, height=0, use_container_width=True)
