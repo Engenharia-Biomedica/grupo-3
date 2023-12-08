@@ -44,8 +44,11 @@ if microorganismo != 'Todos':
     )
     if antibiotico != 'Selecione':
         interpretacao = determinar_interpretacao(microorganismo, antibiotico)
-        st.write(f"Para o microorganismo {microorganismo} e o antibiótico {antibiotico}, a interpretação é: {interpretacao}")
+        st.divider()
         
+        st.write(f"Para o microorganismo {microorganismo} e o antibiótico {antibiotico}, a interpretação é: {interpretacao}")
+
+        st.divider()
 
 # Mostrando o gráfico para o usuário
 st.bar_chart(
